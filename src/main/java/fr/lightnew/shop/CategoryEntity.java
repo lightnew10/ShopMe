@@ -6,9 +6,12 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.UUID;
+
 public class CategoryEntity {
 
     private String name;
+    private UUID id;
     private ItemStack item;
     private ItemStack[] contentCategory;
     private int inventory_size;
@@ -19,9 +22,14 @@ public class CategoryEntity {
         if (itemDisplay == null)
             itemDisplay = new ItemStack(Material.STONE);
 
+        this.id = UUID.randomUUID();
         this.name = name;
         this.item = itemDisplay;
         this.inventory_size = size;
+    }
+
+    public UUID getId() {
+        return id;
     }
 
     public ItemStack getItem() {
